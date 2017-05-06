@@ -1,0 +1,1 @@
+<h2>I am the Link Post Format!</h2>

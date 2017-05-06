@@ -1,0 +1,1 @@
+<h2>I am the Chat Post Format!</h2>

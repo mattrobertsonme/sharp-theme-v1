@@ -1,0 +1,1 @@
+<h2>I am the Quote Post Format!</h2>

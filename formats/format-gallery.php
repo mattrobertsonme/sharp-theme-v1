@@ -1,0 +1,1 @@
+<h2>I am the Image Gallery Post Format!</h2>
