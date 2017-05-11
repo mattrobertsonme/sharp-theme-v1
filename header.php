@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
 	    <!-- Title -->
-		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
+		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' -'; } ?> <?php bloginfo('name'); ?></title>
         
         <!-- Favicons -->
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
@@ -35,30 +35,30 @@
         </script>
     </head>
 	
-	<body <?php body_class(); ?> class="style1" >
+	<body <?php body_class(); ?> id="<?php echo get_theme_mod('sharp_theme_style'); ?>" style="background-image: url(<?php echo get_theme_mod('background_image'); ?>)">
         
         <?php if ( is_front_page() && is_home() ): ?>
         <!-- Hero Begin -->
 		<div class="hero hero-full" style="background-image: url(<?php echo get_theme_mod( 'hero_image' ); ?>)">
 			<div class="hero-header">
                 <?php if ( get_theme_mod( 'social_facebook' ) ) : ?>
-                    <a href="<?php echo get_theme_mod( 'social_facebook' ); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a title="Facebook" href="<?php echo get_theme_mod( 'social_facebook' ); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <?php endif; ?>
                 
                 <?php if ( get_theme_mod( 'social_twitter' ) ) : ?>
-                    <a href="<?php echo get_theme_mod( 'social_twitter' ); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a title="Twitter" href="<?php echo get_theme_mod( 'social_twitter' ); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 <?php endif; ?>
                 
                 <?php if ( get_theme_mod( 'social_youtube' ) ) : ?>
-                     <a href="<?php echo get_theme_mod( 'social_youtube' ); ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    <a title="YouTube" href="<?php echo get_theme_mod( 'social_youtube' ); ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a>
                 <?php endif; ?>
                 
                 <?php if ( get_theme_mod( 'social_instagram' ) ) : ?>
-                    <a href="<?php echo get_theme_mod( 'social_instagram' ); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a title="Instagram" ref="<?php echo get_theme_mod( 'social_instagram' ); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                 <?php endif; ?>
                 
                 <?php if ( get_theme_mod( 'social_linkedin' ) ) : ?>
-                    <a href="<?php echo get_theme_mod( 'social_linkedin' ); ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a title="LinkedIn" href="<?php echo get_theme_mod( 'social_linkedin' ); ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                 <?php endif; ?>
 			</div>
 			
@@ -69,7 +69,7 @@
 			
 			<div class="hero-footer">
 				<div class="bounce">
-					<i class="fa fa-arrow-down" aria-hidden="true"></i>
+				    <a href="#top"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>
 				</div>
 			</div>
 		</div>
@@ -78,7 +78,7 @@
         <?php elseif (is_page('services') ): ?><?php else: ?><?php endif ?>
         
         <!-- Header Begin -->
-		<header>	
+		<header id="top">	
 			<div class="logo">
                 <!-- Logo Image -->
                 <?php if ( get_theme_mod( 'your_theme_logo' ) ) : ?>

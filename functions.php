@@ -9,12 +9,6 @@
 	External Modules/Files
 \*------------------------------------*/
 
-// Load any external files you have here
-
-/*------------------------------------*\
-	Add our custom Customizer
-\*------------------------------------*/
-
 require get_template_directory() . '/inc/customizer.php';
 
 /*------------------------------------*\

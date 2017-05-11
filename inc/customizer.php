@@ -68,6 +68,16 @@ function prefix_customizer_register( $wp_customize ) {
 	    'panel' => 'panel_id',
 	) );
     
+    /* This creates a Section called Background */
+    $wp_customize->add_section( 'section_background', array(
+	    'priority' => 10,
+	    'capability' => 'edit_theme_options',
+	    'theme_supports' => '',
+	    'title' => __( 'Background', 'textdomain' ),
+	    'description' => '',
+	    'panel' => 'panel_id',
+	) );
+    
     /* This creates a Section called Call to Action */
     $wp_customize->add_section( 'section_cta', array(
 	    'priority' => 10,
@@ -95,6 +105,16 @@ function prefix_customizer_register( $wp_customize ) {
 	    'theme_supports' => '',
 	    'title' => __( 'Image Well', 'textdomain' ),
 	    'description' => 'The Image Well sits above the Footer and below the Call to Action bar. To hide the Image Well leave the values below empty.',
+	    'panel' => 'panel_id',
+	) );
+    
+    /* This creates a Section called Layout */
+    $wp_customize->add_section( 'section_layout', array(
+	    'priority' => 10,
+	    'capability' => 'edit_theme_options',
+	    'theme_supports' => '',
+	    'title' => __( 'Layout', 'textdomain' ),
+	    'description' => 'Change the layout to suit your needs.',
 	    'panel' => 'panel_id',
 	) );
     
@@ -132,11 +152,10 @@ function prefix_customizer_register( $wp_customize ) {
         'type' => 'url',
         'priority' => 10,
         'section' => 'section_social',
-        'label' => __( 'Facebook URL', 'textdomain' ),
+        'label' => __( 'Facebook', 'textdomain' ),
         'description' => 'Enter your Facebook URL here',
     ) );
     
-    /* This creates a Setting called url_field_id */
     $wp_customize->add_setting( 'social_twitter', array(
         'default' => '',
         'type' => 'theme_mod',
@@ -145,13 +164,28 @@ function prefix_customizer_register( $wp_customize ) {
         'sanitize_callback' => 'esc_url',
     ) );
     
-    /* This Controls url_field_id */
     $wp_customize->add_control( 'social_twitter', array(
         'type' => 'url',
         'priority' => 10,
         'section' => 'section_social',
-        'label' => __( 'Twitter URL', 'textdomain' ),
+        'label' => __( 'Twitter', 'textdomain' ),
         'description' => 'Enter your Twitter URL here',
+    ) );
+    
+    $wp_customize->add_setting( 'social_googleplus', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => '',
+        'sanitize_callback' => 'esc_url',
+    ) );
+    
+    $wp_customize->add_control( 'social_googleplus', array(
+        'type' => 'url',
+        'priority' => 10,
+        'section' => 'section_social',
+        'label' => __( 'Google Plus', 'textdomain' ),
+        'description' => 'Enter your Google Plus URL here',
     ) );
     
     /* This creates a Setting called url_field_id */
@@ -168,11 +202,10 @@ function prefix_customizer_register( $wp_customize ) {
         'type' => 'url',
         'priority' => 10,
         'section' => 'section_social',
-        'label' => __( 'Youtube URL', 'textdomain' ),
+        'label' => __( 'Youtube', 'textdomain' ),
         'description' => 'Enter your Youtube URL here',
     ) );
     
-    /* This creates a Setting called url_field_id */
     $wp_customize->add_setting( 'social_instagram', array(
         'default' => '',
         'type' => 'theme_mod',
@@ -181,13 +214,140 @@ function prefix_customizer_register( $wp_customize ) {
         'sanitize_callback' => 'esc_url',
     ) );
     
-    /* This Controls url_field_id */
     $wp_customize->add_control( 'social_instagram', array(
         'type' => 'url',
         'priority' => 10,
         'section' => 'section_social',
-        'label' => __( 'Instagram URL', 'textdomain' ),
+        'label' => __( 'Instagram', 'textdomain' ),
         'description' => 'Enter your Instagram URL here',
+    ) );
+    
+    $wp_customize->add_setting( 'social_twitch', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => '',
+        'sanitize_callback' => 'esc_url',
+    ) );
+    
+    $wp_customize->add_control( 'social_twitch', array(
+        'type' => 'url',
+        'priority' => 10,
+        'section' => 'section_social',
+        'label' => __( 'Twitch', 'textdomain' ),
+        'description' => 'Enter your Twitch URL here',
+    ) );
+    
+    $wp_customize->add_setting( 'social_youtube', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => '',
+        'sanitize_callback' => 'esc_url',
+    ) );
+    
+    $wp_customize->add_control( 'social_youtube', array(
+        'type' => 'url',
+        'priority' => 10,
+        'section' => 'section_social',
+        'label' => __( 'YouTube', 'textdomain' ),
+        'description' => 'Enter your YouTube URL here',
+    ) );
+    
+    $wp_customize->add_setting( 'social_tumblr', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => '',
+        'sanitize_callback' => 'esc_url',
+    ) );
+    
+    $wp_customize->add_control( 'social_tumblr', array(
+        'type' => 'url',
+        'priority' => 10,
+        'section' => 'section_social',
+        'label' => __( 'Tumblr', 'textdomain' ),
+        'description' => 'Enter your Tumblr URL here',
+    ) );
+    
+    $wp_customize->add_setting( 'social_pinterest', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => '',
+        'sanitize_callback' => 'esc_url',
+    ) );
+    
+    $wp_customize->add_control( 'social_pinterest', array(
+        'type' => 'url',
+        'priority' => 10,
+        'section' => 'section_social',
+        'label' => __( 'Pinterest', 'textdomain' ),
+        'description' => 'Enter your Pinterest URL here',
+    ) );
+    
+    $wp_customize->add_setting( 'social_skype', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => '',
+        'sanitize_callback' => 'esc_url',
+    ) );
+    
+    $wp_customize->add_control( 'social_skype', array(
+        'type' => 'url',
+        'priority' => 10,
+        'section' => 'section_social',
+        'label' => __( 'Skype', 'textdomain' ),
+        'description' => 'Enter your Skype URL here',
+    ) );
+    
+    $wp_customize->add_setting( 'social_dribbble', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => '',
+        'sanitize_callback' => 'esc_url',
+    ) );
+    
+    $wp_customize->add_control( 'social_dribbble', array(
+        'type' => 'url',
+        'priority' => 10,
+        'section' => 'section_social',
+        'label' => __( 'Dribbble', 'textdomain' ),
+        'description' => 'Enter your Dribbble URL here',
+    ) );
+    
+    $wp_customize->add_setting( 'social_rss', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => '',
+        'sanitize_callback' => 'esc_url',
+    ) );
+    
+    $wp_customize->add_control( 'social_rss', array(
+        'type' => 'url',
+        'priority' => 10,
+        'section' => 'section_social',
+        'label' => __( 'RSS', 'textdomain' ),
+        'description' => 'Enter your RSS URL here',
+    ) );
+    
+    $wp_customize->add_setting( 'social_soundcloud', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => '',
+        'sanitize_callback' => 'esc_url',
+    ) );
+    
+    $wp_customize->add_control( 'social_soundcloud', array(
+        'type' => 'url',
+        'priority' => 10,
+        'section' => 'section_social',
+        'label' => __( 'Sound Cloud', 'textdomain' ),
+        'description' => 'Enter your Sound Cloud URL here',
     ) );
     
     /* This creates a Setting called url_field_id */
@@ -204,9 +364,22 @@ function prefix_customizer_register( $wp_customize ) {
         'type' => 'url',
         'priority' => 10,
         'section' => 'section_social',
-        'label' => __( 'Linked-In URL', 'textdomain' ),
+        'label' => __( 'Linked-In', 'textdomain' ),
         'description' => 'Enter your Linked-In URL here',
     ) );
+    
+    /*------------------------------------*\
+        BACKGROUND
+    \*------------------------------------*/
+    
+    $wp_customize->add_setting('background_image');
+    
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'background_image', array(
+        'label' => 'Background Image',
+        'section' => 'section_background',
+        'settings' => 'background_image',
+        'description' => 'Display a background image on every page of the website.',
+        ) ) );
     
     /*------------------------------------*\
         IMAGE WELL
@@ -369,9 +542,54 @@ function prefix_customizer_register( $wp_customize ) {
         'section' => 'section_about',
         'settings' => 'about_image',
         'description' => 'This image will appear on every page of the website. Take a picture of yourself and dont forget the smile.',
-        ) ) );
-
+    ) ) );
+    
+    /*------------------------------------*\
+        LAYOUT OPTIONS
+    \*------------------------------------*/
+    
+    $wp_customize->add_setting( 'sharp_theme_style', array(
+        'capability' => 'edit_theme_options',
+        'default' => 'style1',
+    ) );
+    
+    $wp_customize->add_control( 'sharp_theme_style', array(
+        'type' => 'radio',
+        'section' => 'section_layout', // Add a default or your own section
+        'label' => __( 'Layout Style' ),
+        'description' => __( 'There are three options available for this theme.' ),
+        'choices' => array(
+            'style1' => __( 'Default' ),
+            'style2' => __( 'Card Design' ),
+            'style3' => __( 'Boxed Design' ),
+    ), ) );
+    
+    $wp_customize->add_setting( 'sharp_theme_featured', array(
+        'capability' => 'edit_theme_options',
+        'default' => 'featured-layout-1',
+    ) );
+    
+    $wp_customize->add_control( 'sharp_theme_featured', array(
+        'type' => 'radio',
+        'section' => 'section_layout', // Add a default or your own section
+        'label' => __( 'Featured Layout' ),
+        'description' => __( 'There are three options available for this theme.' ),
+        'choices' => array(
+            'featured-layout-1' => __( 'Default' ),
+            'featured-layout-2' => __( 'Layout 2' ),
+    ), ) );
 
     }
+function themeslug_sanitize_select( $input, $setting ) {
+
+  // Ensure input is a slug.
+  $input = sanitize_key( $input );
+
+  // Get list of choices from the control associated with the setting.
+  $choices = $setting->manager->get_control( $setting->id )->choices;
+
+  // If the input is a valid key, return it; otherwise, return the default.
+  return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
 
 ?>

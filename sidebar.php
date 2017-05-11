@@ -1,4 +1,4 @@
-<div class="col-xs-3 sidebar">    
+<div class="col-xs-12 col-md-3 sidebar">    
     <div class="row">
 	    <div class="col-xs-12">
             <div class="widget">
@@ -42,17 +42,16 @@
             
             <div class="widget">
                 <div class="widget-header">Popular Posts</div>
-                <?php wp_reset_query(); ?>
-                <?php query_posts( array( 'post_type'  => 'post', 'posts_per_page' => 1, 'order' => ASC, 'post__in' => get_option('sticky_posts') ) ); ?>
+                <?php query_posts( array('posts_per_page'=> 3,'post__in' => get_option( 'sticky_posts' ), 'ignore_sticky_posts' => 1) ); ?>
 				<?php get_template_part('loop', '3'); ?>
                 <?php wp_reset_query(); ?>
             </div>
 	    </div>
         
-        <div class="col-xs-12">
+        <!--<div class="col-xs-12">
             <div class="widget">
             <?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-2')) ?>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>

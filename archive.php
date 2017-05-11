@@ -1,19 +1,24 @@
 <?php get_header(); ?>
-
-	<main role="main">
-		<!-- section -->
-		<section>
-
-			<h1><?php _e( 'Archives', 'html5blank' ); ?></h1>
-
-			<?php get_template_part('loop'); ?>
-
-			<?php get_template_part('pagination'); ?>
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
-
+    
+	<!-- Main Begin -->
+    <section class="main">
+        <div class="container">
+		    <div class="row">
+                <div class="col-xs-9">
+                    <div class="col-xs-12">		
+					    <article class="taxonomy-title">							
+							<h1><?php _e( 'Archives', 'html5blank' ); ?></h1>
+						</article>
+					</div>
+					
+			        <?php get_template_part('loop'); ?><?php get_template_part('pagination'); ?>
+                </div>
+                
+                <?php get_sidebar(); ?>
+            </div>
+        </div>
+    </section>
+    <!-- Main Ends -->
+    
 <?php get_footer(); ?>
+

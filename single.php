@@ -3,7 +3,7 @@
     <section class="main">
         <div class="container">
 		    <div class="row">
-				<div class="col-xs-9">
+				<div class="col-xs-12 col-md-9">
                     <?php if (have_posts()): while (have_posts()) : the_post(); ?>
                     <article class="post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>						
 						<div class="post-header">
